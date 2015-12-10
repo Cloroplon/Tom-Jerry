@@ -13,13 +13,19 @@ namespace TomAndJerry.States
     static class StateManager
     {
         static private State currentState;
-        
-        static public void LoadContent(ContentManager contentManager)
+        static public ContentManager Content { private set; get; }
+        static public GraphicsDevice GraphicsDevice { private set; get; }
+        static public SpriteBatch SpriteBatch { private set; get; }
+
+        static public void LoadContent(ContentManager contentManager, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
         {
-            currentState.LoadContent(contentManager);
+            Content = contentManager;
+            GraphicsDevice = graphicsDevice;
+            SpriteBatch = spriteBatch;
+            currentState.LoadContent();
         }
 
-       static public void UnloadContent()
+        static public void UnloadContent()
         {
             
         }

@@ -10,7 +10,7 @@ namespace TomAndJerry
 {
     interface IState
     {
-        void LoadContent(ContentManager contentManager);
+        void LoadContent();
         
         void UnloadContent();
         

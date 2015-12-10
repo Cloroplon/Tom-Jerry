@@ -13,11 +13,11 @@ namespace TomAndJerry.States
         private Texture2D texture2D;
         
 
-        public override void LoadContent(ContentManager contentManager)
+        public override void LoadContent()
         {
-            base.LoadContent(contentManager);
+            
             // this just a pic to see if it is working. It can be replaced.
-            texture2D = contentManager.Load<Texture2D>("Start");
+            texture2D = this.contentManager.Load<Texture2D>("Start");
         }
 
         public override void UnloadContent()

@@ -10,7 +10,7 @@ namespace TomAndJerry.States
 {
     class MenuState : State
     {
-        public override void LoadContent(ContentManager contentManager)
+        public override void LoadContent()
         {
             // TODO
         }

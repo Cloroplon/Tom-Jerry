@@ -42,7 +42,7 @@ namespace TomAndJerry
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            StateManager.LoadContent(Content);
+            StateManager.LoadContent(Content, GraphicsDevice, spriteBatch);
           
         }
 

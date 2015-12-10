@@ -20,15 +20,15 @@ namespace TomAndJerry.States
              this.Dimensions = new Vector2(640,480); // the size of the screen is basic and it can be changed later if we decide.
          }
 
-         public virtual void LoadContent(ContentManager content)
+         public virtual void LoadContent()
          {
-           this.ContentManager = new ContentManager(content.ServiceProvider, "Content");
+           this.contentManager = new ContentManager(StateManager.Content.ServiceProvider, "Content");
          }
 
 
          public virtual void UnloadContent()
          {
-             this.ContentManager.Unload();
+             this.contentManager.Unload();
          }
 
 
@@ -43,12 +43,6 @@ namespace TomAndJerry.States
         {
             get { return dimensions; }
             set { dimensions = value; }
-        }
-
-        public ContentManager ContentManager
-        {
-            get { return contentManager; }
-            set { contentManager = value; }
-        }
+        }      
     }
 }
