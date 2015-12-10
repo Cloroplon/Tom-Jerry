@@ -37,7 +37,10 @@ namespace TomAndJerry.States
          }
 
 
-         public abstract void Update(GameTime gameTime);
+         public virtual void Update(GameTime gameTime)
+         {
+             
+         }
 
         public Vector2 Dimensions
         {
