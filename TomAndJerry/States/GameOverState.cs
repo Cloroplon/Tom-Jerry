@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TomAndJerry.States
 {
-    class GameOverState : State
+    public class GameOverState : State
     {
         public override void LoadContent()
         {
@@ -29,5 +29,7 @@ namespace TomAndJerry.States
         {
             // TODO
         }
+
+       
     }
 }

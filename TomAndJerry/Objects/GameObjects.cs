@@ -9,7 +9,7 @@ using TomAndJerry.Interfaces;
 namespace TomAndJerry
 {
     /// <summary>
-    /// This is the basic class for all our objects. Every objects needs to have a position which to show where to be drawn, an image which will be displayed on the position and every objects must know how to draw itself, update, load and unload so the state will contain lists of the objects that are inside it and will call their Methods. 
+    /// This is the basic class for all our objects. Every objects needs to have a position which to show where to be drawn, an Image which will be displayed on the position and every objects must know how to draw itself, update, load and unload so the state will contain lists of the objects that are inside it and will call their Methods. 
     /// </summary>
     abstract class GameObjects : IObjects
     {

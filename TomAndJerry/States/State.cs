@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Xml.Serialization;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -14,10 +15,13 @@ namespace TomAndJerry.States
      {
          private Vector2 dimensions;
          protected ContentManager contentManager;
+         [XmlIgnore]
+         public Type Type { get; private set; }
 
          public State()
          {
-             this.Dimensions = new Vector2(640,480); // the size of the screen is basic and it can be changed later if we decide.
+            this.Dimensions = new Vector2(640,480); // the size of the screen is basic and it can be changed later if we decide.
+             this.Type = this.GetType();
          }
 
          public virtual void LoadContent()

@@ -12,10 +12,13 @@ namespace TomAndJerry
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private StateManager stateManager;
 
         public Game1()
         {
+            
             graphics = new GraphicsDeviceManager(this);
+           
             Content.RootDirectory = "Content";
         }
 
@@ -27,9 +30,9 @@ namespace TomAndJerry
         /// </summary>
         protected override void Initialize()
         {
-            StateManager.CurrentState = new GameState();
-            this.graphics.PreferredBackBufferWidth = (int)StateManager.CurrentState.Dimensions.X;
-            this.graphics.PreferredBackBufferHeight = (int)StateManager.CurrentState.Dimensions.Y;
+            this.stateManager = new StateManager();
+            this.graphics.PreferredBackBufferWidth = (int)this.stateManager.CurrentState.Dimensions.X;
+            this.graphics.PreferredBackBufferHeight = (int)this.stateManager.CurrentState.Dimensions.Y;
             this.graphics.ApplyChanges();
             base.Initialize();
         }
@@ -42,7 +45,9 @@ namespace TomAndJerry
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            StateManager.LoadContent(Content, GraphicsDevice, spriteBatch);
+            StateManager.GraphicsDevice = GraphicsDevice;
+            StateManager.SpriteBatch = spriteBatch;
+            this.stateManager.LoadContent(Content);
           
         }
 
@@ -52,7 +57,7 @@ namespace TomAndJerry
         /// </summary>
         protected override void UnloadContent()
         {
-            StateManager.UnloadContent();
+            this.stateManager.UnloadContent();
             
         }
 
@@ -66,7 +71,7 @@ namespace TomAndJerry
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            StateManager.Update(gameTime);
+            this.stateManager.Update(gameTime);
           
             base.Update(gameTime);
         }
@@ -81,7 +86,7 @@ namespace TomAndJerry
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            StateManager.Draw(spriteBatch);
+            this.stateManager.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

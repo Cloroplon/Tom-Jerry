@@ -10,39 +10,47 @@ using Microsoft.Xna.Framework.Graphics;
 /// </summary>
 namespace TomAndJerry.States
 {
-    static class StateManager
+    class StateManager
     {
-        static private State currentState;
-        static public ContentManager Content { private set; get; }
-        static public GraphicsDevice GraphicsDevice { private set; get; }
-        static public SpriteBatch SpriteBatch { private set; get; }
+        private State currentState;
+        public static ContentManager Content { private set; get; }
+        public static GraphicsDevice GraphicsDevice { set; get; }
+        public static SpriteBatch SpriteBatch { set; get; }
+        public XMLManager<State> xmlManager;
 
-        static public void LoadContent(ContentManager contentManager, GraphicsDevice graphicsDevice, SpriteBatch spriteBatch)
+        public StateManager()
+        {
+            
+            xmlManager = new XMLManager<State>();
+            this.CurrentState = new GameState();
+            xmlManager.Type = this.currentState.Type;
+            this.CurrentState = xmlManager.Load("../../../Load/GameScreen.xml");
+
+        }
+
+        public void LoadContent(ContentManager contentManager)
         {
             Content = contentManager;
-            GraphicsDevice = graphicsDevice;
-            SpriteBatch = spriteBatch;
-            currentState.LoadContent();
+            this.CurrentState.LoadContent();
         }
 
-        static public void UnloadContent()
+        public void UnloadContent()
         {
+            this.CurrentState.UnloadContent();
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            this.CurrentState.Draw(spriteBatch);
             
         }
 
-       static public void Draw(SpriteBatch spriteBatch)
+        public void Update(GameTime gameTime)
         {
-           
-            currentState.Draw(spriteBatch);
-            
+            this.CurrentState.Update(gameTime);
         }
 
-       static public void Update(GameTime gameTime)
-        {
-            
-        }
-
-        public static State CurrentState
+        public State CurrentState
         {
             get { return currentState; }
             set { currentState = value; }

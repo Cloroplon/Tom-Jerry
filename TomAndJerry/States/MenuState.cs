@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TomAndJerry.States
 {
-    class MenuState : State
+    public  class MenuState : State
     {
         public override void LoadContent()
         {
@@ -29,5 +29,7 @@ namespace TomAndJerry.States
         {
             // TODO
         }
+
+       
     }
 }
