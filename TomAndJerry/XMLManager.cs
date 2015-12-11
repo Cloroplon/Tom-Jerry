@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
-
+/// <summary>
+/// We will use it to load and save our states.
+/// </summary>
 namespace TomAndJerry
 {
     public class XMLManager<T>

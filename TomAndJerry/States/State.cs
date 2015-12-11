@@ -21,11 +21,13 @@ namespace TomAndJerry.States
          public State()
          {
             this.Dimensions = new Vector2(640,480); // the size of the screen is basic and it can be changed later if we decide.
+            // we are getting the type so we can give it to the xml
              this.Type = this.GetType();
          }
 
          public virtual void LoadContent()
          {
+            // we are creating a new conent manager so it can load only the files we need for this specific content manager
            this.contentManager = new ContentManager(StateManager.Content.ServiceProvider, "Content");
          }
 

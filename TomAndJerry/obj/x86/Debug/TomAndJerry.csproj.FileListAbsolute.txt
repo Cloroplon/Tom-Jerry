@@ -79,6 +79,3 @@ C:\Users\Simooo\Desktop\TomAndJerry\obj\x86\Debug\TomAndJerry.exe
 C:\Users\Simooo\Desktop\TomAndJerry\obj\x86\Debug\TomAndJerry.pdb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Orbitron.spritefont
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Arial.xnb
-C:\Users\Simooo\Desktop\Game\TomAndJerry\bin\Windows\Debug\Content\Orbitron.spritefont
-C:\Users\Simooo\Desktop\Game\TomAndJerry\bin\Windows\Debug\Content\Orbitron.xnb
-C:\Users\Simooo\Desktop\Game\TomAndJerry\bin\Windows\Debug\Content\Arial.xnb

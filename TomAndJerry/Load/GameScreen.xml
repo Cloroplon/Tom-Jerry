@@ -2,6 +2,8 @@
 <GameState>
   <Image>
     <Path>Start</Path>
+    <Effects>FadeEffect</Effects>
+    <IsActive>true</IsActive>
     <Position>
       <X>0</X>
       <Y>0</Y>

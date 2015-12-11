@@ -18,6 +18,7 @@ namespace TomAndJerry.States
             base.LoadContent();
             // this just a pic to see if it is working. It can be replaced.
             this.Image.LoadContent();
+            this.Image.FadeEffect.FadeSpeed = 0.2f;
         }
 
         public override void UnloadContent()
