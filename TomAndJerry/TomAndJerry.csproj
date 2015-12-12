@@ -45,6 +45,7 @@
     <Compile Include="ImageAndEffects\FadeEffect.cs" />
     <Compile Include="ImageAndEffects\Image.cs" />
     <Compile Include="ImageAndEffects\ImageEffect.cs" />
+    <Compile Include="InputManager.cs" />
     <Compile Include="Interfaces\IObjects.cs" />
     <Compile Include="Objects\Characters\Jerry.cs" />
     <Compile Include="Objects\Characters\Tom.cs" />

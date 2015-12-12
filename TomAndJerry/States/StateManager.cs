@@ -9,7 +9,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 /// <summary>
-/// This is our StateManager class he is controlling and holding our current state and through it we are going to access every state in the game. 
+/// This is our StateManager class he is controlling and holding our current state and through it we are going to access every state in the game. It is also responsible for the transition between states.
 /// </summary>
 namespace TomAndJerry.States
 {
@@ -17,17 +17,17 @@ namespace TomAndJerry.States
     {
         private State currentState, nextState;
         [XmlIgnore]
-        public static ContentManager Content { private set; get; }
+        public ContentManager Content { private set; get; }
         [XmlIgnore]
-        public static GraphicsDevice GraphicsDevice { set; get; }
+        public GraphicsDevice GraphicsDevice { set; get; }
         [XmlIgnore]
-        public static SpriteBatch SpriteBatch { set; get; }
+        public SpriteBatch SpriteBatch { set; get; }
         public XMLManager<State> xmlManager;
 
-        // The idea is this is image to be used for the transition face. It is a small 1px black dot which scale we made to fit the whole screen. The state will fade and then the new scree will pop-up. I think we can use this for the transitiom between menu and gameState and gameState to gameOverState.
+        // The idea is this is image to be used for the transition face. It is a small 1px black dot which scale was made to fit the whole screen. The state will fade and then the new scree will pop-up. I think we can use this for the transitiom between menu and gameState and gameState to gameOverState.
         public Image Image;
         [XmlIgnore]
-        public static bool IsTransioning { get; private set; }
+        public bool IsTransioning { get; private set; }
 
         public StateManager()
         {
@@ -75,7 +75,7 @@ namespace TomAndJerry.States
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
-            currentState.Image.FadeEffect.IsActive = true;
+            CurrentState.Image.FadeEffect.IsActive = true;
             Image.FadeEffect.IsActive = true;
             IsTransioning = true;
            
@@ -88,18 +88,18 @@ namespace TomAndJerry.States
                 // here the image will start to update until Alpha becomes 1.0 and the new state will load. After that it will start to decrease because of the fade effect and when it gets to 0 the effect will be stopped.
                 Image.Update(gameTime);
                 // when it is set to 1.0f we want it to fade out and once it is faded out we want to change states.
-                if (Image.Alpha == 1.0f)
+                if (Image.Alpha >= 1.0f)
                 {
-                    currentState.UnloadContent();
-                    currentState = nextState;
+                   CurrentState.UnloadContent();
+                   CurrentState = nextState;
                    
-                    xmlManager.Type = currentState.Type;
+                    xmlManager.Type = CurrentState.Type;
                     // Maybe not all of our states will have an xml file for loading so we are first going to check if the file exists.
                     if (File.Exists(currentState.XmlPath))
                     {
-                        currentState = xmlManager.Load(currentState.XmlPath);
+                      CurrentState = xmlManager.Load(currentState.XmlPath);
                     }
-                    currentState.LoadContent();
+                   CurrentState.LoadContent();
                  }
                 else if(Image.Alpha == 0.0f)
                 {

@@ -35,7 +35,7 @@ namespace TomAndJerry.States
         public virtual void LoadContent()
         {
             // we are creating a new conent manager so it can load only the files we need for this specific content manager
-            this.contentManager = new ContentManager(StateManager.Content.ServiceProvider, "Content");
+            this.contentManager = new ContentManager(Game1.StateManager.Content.ServiceProvider, "Content");
         }
 
 
@@ -52,7 +52,7 @@ namespace TomAndJerry.States
 
         public virtual void Update(GameTime gameTime)
         {
-
+            Game1.InputManager.Update();
         }
 
         public Vector2 Dimensions

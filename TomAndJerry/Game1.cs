@@ -13,6 +13,7 @@ namespace TomAndJerry
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         public static StateManager StateManager;
+        public static InputManager InputManager;
 
         public Game1()
         {
@@ -31,6 +32,7 @@ namespace TomAndJerry
         protected override void Initialize()
         {
             XMLManager<StateManager> xml = new XMLManager<StateManager>();
+            InputManager = new InputManager();
             StateManager = xml.Load("../../../Load/StateManager.xml");
             this.graphics.PreferredBackBufferWidth = (int)StateManager.CurrentState.Dimensions.X;
             this.graphics.PreferredBackBufferHeight = (int)StateManager.CurrentState.Dimensions.Y;

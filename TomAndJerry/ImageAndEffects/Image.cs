@@ -51,7 +51,7 @@ namespace TomAndJerry
 
         public void LoadContent()
         {
-            this.contentManager = new ContentManager(StateManager.Content.ServiceProvider, "Content");
+            this.contentManager = new ContentManager(Game1.StateManager.Content.ServiceProvider, "Content");
             if (this.Path != String.Empty)
             {
                 this.Texture = contentManager.Load<Texture2D>(this.Path);
@@ -81,20 +81,20 @@ namespace TomAndJerry
                 this.SourceRectangle = new Rectangle(0, 0, (int)dimension.X, (int)dimension.Y);
             }
 
-            this.renderTarget = new RenderTarget2D(StateManager.GraphicsDevice, (int)dimension.X, (int)dimension.Y);
-            StateManager.GraphicsDevice.SetRenderTarget(this.renderTarget);
-            StateManager.GraphicsDevice.Clear(Color.Transparent);
+            this.renderTarget = new RenderTarget2D(Game1.StateManager.GraphicsDevice, (int)dimension.X, (int)dimension.Y);
+            Game1.StateManager.GraphicsDevice.SetRenderTarget(this.renderTarget);
+            Game1.StateManager.GraphicsDevice.Clear(Color.Transparent);
 
-            StateManager.SpriteBatch.Begin();
+            Game1.StateManager.SpriteBatch.Begin();
             if (Texture != null)
             {
-                StateManager.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
+                Game1.StateManager.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
             }
-            StateManager.SpriteBatch.DrawString(this.Font, Text, Vector2.Zero, Color.White);
-            StateManager.SpriteBatch.End();
+            Game1.StateManager.SpriteBatch.DrawString(this.Font, Text, Vector2.Zero, Color.White);
+            Game1.StateManager.SpriteBatch.End();
 
             Texture = this.renderTarget;
-            StateManager.GraphicsDevice.SetRenderTarget(null);
+            Game1.StateManager.GraphicsDevice.SetRenderTarget(null);
 
             SetEffect<FadeEffect>(ref FadeEffect);
 

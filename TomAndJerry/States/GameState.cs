@@ -30,7 +30,7 @@ namespace TomAndJerry.States
             base.Update(gameTime);
             this.Image.Update(gameTime);
 
-            if (Keyboard.GetState().IsKeyDown(Keys.Enter) && !StateManager.IsTransioning)
+            if (Game1.InputManager.KeyPressed(Keys.Enter) && !Game1.StateManager.IsTransioning)
             {
                 Game1.StateManager.ChangeStates("GameState");
             }
