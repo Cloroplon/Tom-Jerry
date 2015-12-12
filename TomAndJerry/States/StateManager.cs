@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -33,7 +34,7 @@ namespace TomAndJerry.States
             xmlManager = new XMLManager<State>();
             this.CurrentState = new GameState();
             xmlManager.Type = this.currentState.Type;
-            this.CurrentState = xmlManager.Load("../../../Load/GameScreen.xml");
+            this.CurrentState = xmlManager.Load(currentState.XmlPath);
 
         }
 
@@ -71,11 +72,13 @@ namespace TomAndJerry.States
         public void ChangeStates(string stateName)
         {
             nextState = (State) Activator.CreateInstance(Type.GetType("TomAndJerry.States." + stateName));
-            
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
+            currentState.Image.FadeEffect.IsActive = true;
+            Image.FadeEffect.IsActive = true;
             IsTransioning = true;
+           
         }
 
         public void Transition(GameTime gameTime)
@@ -89,6 +92,7 @@ namespace TomAndJerry.States
                 {
                     currentState.UnloadContent();
                     currentState = nextState;
+                   
                     xmlManager.Type = currentState.Type;
                     // Maybe not all of our states will have an xml file for loading so we are first going to check if the file exists.
                     if (File.Exists(currentState.XmlPath))

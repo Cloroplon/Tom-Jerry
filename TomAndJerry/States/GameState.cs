@@ -17,8 +17,7 @@ namespace TomAndJerry.States
             base.LoadContent();
             // this just a pic to see if it is working. It can be replaced.
             this.Image.LoadContent();
-            
-        }
+         }
 
         public override void UnloadContent()
         {

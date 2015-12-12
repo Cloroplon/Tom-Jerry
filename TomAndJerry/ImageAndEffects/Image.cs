@@ -123,7 +123,6 @@ namespace TomAndJerry
             {
                 if (effect.Value.IsActive)
                 {
-
                     effect.Value.Update(gameTime);
                 }
             }
@@ -157,7 +156,7 @@ namespace TomAndJerry
         {
             if (effectList.ContainsKey(effect))
             {
-                effectList[effect].IsActive = true;
+                
                 var obj = this; // we need a reference to this object for the LoadContent
                 effectList[effect].LoadContent(ref obj);
 
