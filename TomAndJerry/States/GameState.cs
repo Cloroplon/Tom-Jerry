@@ -6,19 +6,18 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace TomAndJerry.States
 {
     public class GameState : State
     {
-        public Image Image;
-
         public override void LoadContent()
         {
             base.LoadContent();
             // this just a pic to see if it is working. It can be replaced.
             this.Image.LoadContent();
-            this.Image.FadeEffect.FadeSpeed = 0.2f;
+            
         }
 
         public override void UnloadContent()
@@ -31,6 +30,11 @@ namespace TomAndJerry.States
         {
             base.Update(gameTime);
             this.Image.Update(gameTime);
+
+            if (Keyboard.GetState().IsKeyDown(Keys.Enter) && !StateManager.IsTransioning)
+            {
+                Game1.StateManager.ChangeStates("GameState");
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)

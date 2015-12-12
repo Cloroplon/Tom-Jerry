@@ -13,6 +13,11 @@ namespace TomAndJerry
     {
         public Type Type { get; set; }
 
+        public XMLManager()
+        {
+            this.Type = typeof (T);
+        } 
+
         public T Load(string path)
         {
             T instance;

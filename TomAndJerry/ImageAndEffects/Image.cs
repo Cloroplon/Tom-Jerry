@@ -57,7 +57,7 @@ namespace TomAndJerry
                 this.Texture = contentManager.Load<Texture2D>(this.Path);
             }
             Font = contentManager.Load<SpriteFont>(FontName);
-
+            
             Vector2 dimension = Vector2.Zero;
 
             if (Texture != null)
@@ -84,6 +84,7 @@ namespace TomAndJerry
             this.renderTarget = new RenderTarget2D(StateManager.GraphicsDevice, (int)dimension.X, (int)dimension.Y);
             StateManager.GraphicsDevice.SetRenderTarget(this.renderTarget);
             StateManager.GraphicsDevice.Clear(Color.Transparent);
+
             StateManager.SpriteBatch.Begin();
             if (Texture != null)
             {
@@ -96,6 +97,7 @@ namespace TomAndJerry
             StateManager.GraphicsDevice.SetRenderTarget(null);
 
             SetEffect<FadeEffect>(ref FadeEffect);
+
             if (this.Effects != String.Empty)
             {
                 string[] splitEffects = Effects.Split(':');

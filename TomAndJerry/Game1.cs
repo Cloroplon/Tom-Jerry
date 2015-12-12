@@ -12,7 +12,7 @@ namespace TomAndJerry
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private StateManager stateManager;
+        public static StateManager StateManager;
 
         public Game1()
         {
@@ -30,9 +30,10 @@ namespace TomAndJerry
         /// </summary>
         protected override void Initialize()
         {
-            this.stateManager = new StateManager();
-            this.graphics.PreferredBackBufferWidth = (int)this.stateManager.CurrentState.Dimensions.X;
-            this.graphics.PreferredBackBufferHeight = (int)this.stateManager.CurrentState.Dimensions.Y;
+            XMLManager<StateManager> xml = new XMLManager<StateManager>();
+            StateManager = xml.Load("../../../Load/StateManager.xml");
+            this.graphics.PreferredBackBufferWidth = (int)StateManager.CurrentState.Dimensions.X;
+            this.graphics.PreferredBackBufferHeight = (int)StateManager.CurrentState.Dimensions.Y;
             this.graphics.ApplyChanges();
             base.Initialize();
         }
@@ -47,7 +48,7 @@ namespace TomAndJerry
             spriteBatch = new SpriteBatch(GraphicsDevice);
             StateManager.GraphicsDevice = GraphicsDevice;
             StateManager.SpriteBatch = spriteBatch;
-            this.stateManager.LoadContent(Content);
+            StateManager.LoadContent(Content);
           
         }
 
@@ -57,7 +58,7 @@ namespace TomAndJerry
         /// </summary>
         protected override void UnloadContent()
         {
-            this.stateManager.UnloadContent();
+            StateManager.UnloadContent();
             
         }
 
@@ -71,7 +72,7 @@ namespace TomAndJerry
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            this.stateManager.Update(gameTime);
+            StateManager.Update(gameTime);
           
             base.Update(gameTime);
         }
@@ -86,7 +87,7 @@ namespace TomAndJerry
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-            this.stateManager.Draw(spriteBatch);
+            StateManager.Draw(spriteBatch);
             spriteBatch.End();
             base.Draw(gameTime);
         }

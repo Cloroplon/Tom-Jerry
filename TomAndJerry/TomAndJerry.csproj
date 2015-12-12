@@ -71,8 +71,14 @@
     <Content Include="Content\Start.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\StateManager\FadeImage.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Icon.ico" />
-    <Content Include="Load\GameScreen.xml" />
+    <Content Include="Load\GameScreen.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Load\StateManager.xml" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
