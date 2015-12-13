@@ -11,10 +11,10 @@ using Microsoft.Xna.Framework.Graphics;
 /// </summary>
 namespace TomAndJerry.States
 {
-    public abstract class State : IState
+    public abstract class State : BasicMethods
     {
         [XmlIgnore]
-        private Vector2 dimensions;
+        public Vector2 dimensions;
         protected ContentManager contentManager;
         [XmlIgnore]
         public Type Type { get; private set; }

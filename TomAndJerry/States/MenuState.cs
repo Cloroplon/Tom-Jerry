@@ -3,33 +3,43 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace TomAndJerry.States
 {
-    public  class MenuState : State
+    public class MenuState : State
     {
+        private MenuManager menuManager;
+        
+
+        public MenuState()
+        {
+            menuManager = new MenuManager();
+            
+        }
+
         public override void LoadContent()
         {
-            // TODO
+            base.LoadContent();
+            menuManager.LoadContent("../../../Load/Menu.xml");
         }
 
         public override void UnloadContent()
         {
-            // TODO
-        }
-
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            // TODO
+            base.UnloadContent();
+            menuManager.UnloadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
-            // TODO
+            base.Update(gameTime);
+            menuManager.Update(gameTime);
         }
 
-       
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            base.Draw(spriteBatch);
+            menuManager.Draw(spriteBatch);
+        }
     }
 }

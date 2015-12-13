@@ -32,7 +32,7 @@ namespace TomAndJerry.States
 
             if (Game1.InputManager.KeyPressed(Keys.Enter) && !Game1.StateManager.IsTransioning)
             {
-                Game1.StateManager.ChangeStates("GameState");
+                Game1.StateManager.ChangeStates("MenuState");
             }
         }
 

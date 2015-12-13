@@ -15,7 +15,7 @@ using TomAndJerry.States;
 /// </summary>
 namespace TomAndJerry
 {
-    public class Image
+    public class Image : BasicMethods
     {
         public float Alpha;
         public string Text, FontName;
@@ -98,14 +98,12 @@ namespace TomAndJerry
 
             SetEffect<FadeEffect>(ref FadeEffect);
 
-            if (this.Effects != String.Empty)
+            foreach (var effect in effectList)
             {
-                string[] splitEffects = Effects.Split(':');
-                foreach (var effect in splitEffects)
-                {
-                    ActivateEffect(effect);
-                }
+                var obj = this; // we need a reference to this object for the LoadContent
+                effect.Value.LoadContent(ref obj);
             }
+            
         }
 
         public void UnloadContent()
@@ -156,10 +154,7 @@ namespace TomAndJerry
         {
             if (effectList.ContainsKey(effect))
             {
-                
-                var obj = this; // we need a reference to this object for the LoadContent
-                effectList[effect].LoadContent(ref obj);
-
+                effectList[effect].IsActive = true;
             }
         }
 

@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace TomAndJerry
 {
-    interface IState
+    interface BasicMethods
     {
         void LoadContent();
         

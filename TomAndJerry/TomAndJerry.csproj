@@ -56,7 +56,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\GameOverState.cs" />
     <Compile Include="States\GameState.cs" />
+    <Compile Include="States\Menu.cs" />
+    <Compile Include="States\MenuItem.cs" />
+    <Compile Include="States\MenuManager.cs" />
     <Compile Include="States\MenuState.cs" />
+    <Compile Include="States\MenuTitle.cs" />
     <Compile Include="States\State.cs" />
     <Compile Include="States\StateManager.cs" />
     <Compile Include="XMLManager.cs" />
@@ -79,6 +83,7 @@
     <Content Include="Load\GameState.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Load\Menu.xml" />
     <Content Include="Load\StateManager.xml" />
   </ItemGroup>
   <ItemGroup>
