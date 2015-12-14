@@ -12,8 +12,9 @@ namespace TomAndJerry.States
 {
     public class Menu : BasicMethods
     {
+        
         public event EventHandler OnMenuChange;
-
+        
         public string Axis;
         public string Effects;
         [XmlElement("Item")]
@@ -26,7 +27,6 @@ namespace TomAndJerry.States
         {
             this.id =  String.Empty;
             this.itemNumber = 0;
-            this.Axis = "X";
             this.Effects = String.Empty;
             Items = new List<MenuItem>();
         }
@@ -66,6 +66,7 @@ namespace TomAndJerry.States
         public void LoadContent()
         {
             string[] effectsSplit = Effects.Split(':');
+            
             foreach (var item in Items)
             {
                 item.Image.LoadContent();
@@ -110,11 +111,11 @@ namespace TomAndJerry.States
             {
                 if (Game1.InputManager.KeyPressed(Keys.Up))
                 {
-                    itemNumber++;
+                    itemNumber--;
                 }
                 else if (Game1.InputManager.KeyPressed(Keys.Down))
                 {
-                    itemNumber--;
+                    itemNumber++;
                 }
             }
             // we are checking to not go outside boundaries

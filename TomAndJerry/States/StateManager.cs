@@ -108,7 +108,8 @@ namespace TomAndJerry.States
                       CurrentState = xmlManager.Load(currentState.XmlPath);
                     }
                    CurrentState.LoadContent();
-                 }
+                    IsTransioning = false;
+                }
                 else if(Image.Alpha == 0.0f)
                 {
                     Image.IsActive = false;

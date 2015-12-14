@@ -50,7 +50,6 @@ C:\Users\Simooo\Desktop\Game\TomAndJerry\bin\Windows\Debug\SharpDX.XInput.xml
 C:\Users\Simooo\Desktop\Game\TomAndJerry\bin\Windows\Debug\SharpDX.RawInput.xml
 C:\Users\Simooo\Desktop\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Simooo\Desktop\Game\TomAndJerry\obj\x86\Debug\TomAndJerry.csprojResolveAssemblyReference.cache
-C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Orbitron.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Start.png
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\TomAndJerry.exe
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\TomAndJerry.pdb
@@ -77,7 +76,7 @@ C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D9.xml
 C:\Users\Simooo\Desktop\TomAndJerry\obj\x86\Debug\TomAndJerry.csprojResolveAssemblyReference.cache
 C:\Users\Simooo\Desktop\TomAndJerry\obj\x86\Debug\TomAndJerry.exe
 C:\Users\Simooo\Desktop\TomAndJerry\obj\x86\Debug\TomAndJerry.pdb
-C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Orbitron.spritefont
-C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Arial.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\StateManager\FadeImage.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Arial.xnb
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Orbitron.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\StateManager\FadeImage.xnb

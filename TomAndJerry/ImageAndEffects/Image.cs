@@ -63,8 +63,8 @@ namespace TomAndJerry
             if (Texture != null)
             {
                 dimension.X += Texture.Width;
-                dimension.X += this.Font.MeasureString(Text).X;
             }
+            dimension.X += this.Font.MeasureString(Text).X;
 
             if (Texture != null)
             {
@@ -80,7 +80,7 @@ namespace TomAndJerry
             {
                 this.SourceRectangle = new Rectangle(0, 0, (int)dimension.X, (int)dimension.Y);
             }
-
+            
             this.renderTarget = new RenderTarget2D(Game1.StateManager.GraphicsDevice, (int)dimension.X, (int)dimension.Y);
             Game1.StateManager.GraphicsDevice.SetRenderTarget(this.renderTarget);
             Game1.StateManager.GraphicsDevice.Clear(Color.Transparent);
