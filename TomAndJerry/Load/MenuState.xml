@@ -1,13 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<GameState>
+<MenuState>
   <Image>
-    <Path>Start</Path>
-    <Effects>FadeEffect</Effects>
-    <IsActive>true</IsActive>
+    <Path>MenuBackground</Path>
     <Position>
       <X>0</X>
       <Y>0</Y>
     </Position>
   </Image>
-  
-</GameState>
+</MenuState>

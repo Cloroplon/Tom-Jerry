@@ -42,7 +42,7 @@ namespace TomAndJerry.States
 
         public void Update(GameTime gameTime)
         {
-          menu.Update(gameTime);   
+           menu.Update(gameTime);   
         }
 
         public void Draw(SpriteBatch spriteBatch)

@@ -130,13 +130,17 @@ namespace TomAndJerry.States
             // after taking the input we are going to activate the item which corresponds to the itemNumber we are currently on.
             for (int i = 0; i < Items.Count; i++)
             {
+                
                 if (i == itemNumber)
                 {
                     Items[i].Image.IsActive = true;
+                    
                 }
                 else
                 {
+
                     Items[i].Image.IsActive = false;
+                   
                 }
                 Items[i].Image.Update(gameTime);
             }

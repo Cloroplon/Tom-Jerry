@@ -69,7 +69,7 @@ namespace TomAndJerry
             if (Texture != null)
             {
                 dimension.Y = Math.Max(Texture.Height, this.Font.MeasureString(Text).Y);
-
+                
             }
             else
             {
@@ -90,7 +90,7 @@ namespace TomAndJerry
             {
                 Game1.StateManager.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
             }
-            Game1.StateManager.SpriteBatch.DrawString(this.Font, Text, Vector2.Zero, Color.White);
+            Game1.StateManager.SpriteBatch.DrawString(this.Font, Text, Vector2.Zero, Color.Black);
             Game1.StateManager.SpriteBatch.End();
 
             Texture = this.renderTarget;
@@ -98,11 +98,17 @@ namespace TomAndJerry
 
             SetEffect<FadeEffect>(ref FadeEffect);
 
-            foreach (var effect in effectList)
+
+            if (Effects != String.Empty)
             {
-                var obj = this; // we need a reference to this object for the LoadContent
-                effect.Value.LoadContent(ref obj);
+                string[] split = Effects.Split(':');
+                foreach (string item in split)
+                {
+                    ActivateEffect(item);
+                }
+                    
             }
+            
             
         }
 
@@ -155,6 +161,8 @@ namespace TomAndJerry
             if (effectList.ContainsKey(effect))
             {
                 effectList[effect].IsActive = true;
+                var obj = this;
+                effectList[effect].LoadContent(ref obj);
             }
         }
 

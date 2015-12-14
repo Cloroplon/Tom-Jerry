@@ -32,7 +32,7 @@ namespace TomAndJerry.States
         public StateManager()
         {
             xmlManager = new XMLManager<State>();
-            this.CurrentState = new GameState();
+            this.CurrentState = new TitleState();
             xmlManager.Type = this.currentState.Type;
             this.CurrentState = xmlManager.Load(currentState.XmlPath);
 
@@ -75,16 +75,6 @@ namespace TomAndJerry.States
             Image.IsActive = true;
             Image.FadeEffect.Increase = true;
             Image.Alpha = 0.0f;
-            // We are activating the effects of the image here so it can flash until the state has transitioned.
-            this.Image.Effects.Split(':')
-                .ToList()
-                .ForEach(effect => 
-                this.Image.ActivateEffect(effect));
-
-            this.CurrentState.Image.Effects.Split(':')
-                .ToList()
-                .ForEach(effect => 
-                this.CurrentState.Image.ActivateEffect(effect));
             IsTransioning = true;
            
         }
@@ -108,7 +98,7 @@ namespace TomAndJerry.States
                       CurrentState = xmlManager.Load(currentState.XmlPath);
                     }
                    CurrentState.LoadContent();
-                    IsTransioning = false;
+                    
                 }
                 else if(Image.Alpha == 0.0f)
                 {

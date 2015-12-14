@@ -1,27 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 
 namespace TomAndJerry.States
 {
-    public class MenuState : State
+   public class TitleState : State
     {
-        private MenuManager menuManager;
-        
-
-        public MenuState()
-        {
-            menuManager = new MenuManager();
-            
-        }
-
         public override void LoadContent()
         {
             base.LoadContent();
-            menuManager.LoadContent("../../../Load/Menu.xml");
+            // this just a pic to see if it is working. It can be replaced.
             this.Image.LoadContent();
         }
 
@@ -29,24 +17,27 @@ namespace TomAndJerry.States
         {
             base.UnloadContent();
             this.Image.UnloadContent();
-            menuManager.UnloadContent();
-            
         }
 
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
             this.Image.Update(gameTime);
-            menuManager.Update(gameTime);
-            
+
+            if (Game1.InputManager.KeyPressed(Keys.Enter) && !Game1.StateManager.IsTransioning)
+            {
+                Game1.StateManager.ChangeStates("MenuState");
+            }
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
+            // just a random pic to see if our game is working for now. You can remove it any time.
             this.Image.Draw(spriteBatch);
-            menuManager.Draw(spriteBatch);
-            
+
         }
+
+
     }
 }

@@ -30,7 +30,11 @@ namespace TomAndJerry
 
         }
 
-        public bool IsActive { get; set; }
-        
+        public bool IsActive
+        {
+            get { return this.isActive; }
+            set { this.isActive = value; }
+        }
+
     }
 }
