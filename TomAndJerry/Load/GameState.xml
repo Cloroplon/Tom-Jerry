@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GameState>
+  <Image>
+    <Path>TomAndJerryKitchen</Path>
+    <Position>
+      <X>0</X>
+      <Y>0</Y>
+    </Position>
+  </Image>
+</GameState>

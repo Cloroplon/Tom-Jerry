@@ -10,8 +10,6 @@ namespace TomAndJerry.Objects.Characters
     class Tom : GameObjects
     {
         // more fields according to what we decide we want him to do. Also we will draw just part of the Image from the sprite. 
-        public Tom(Vector2 position, Texture2D image) : base(position, image)
-        {
-        }
+        
     }
 }

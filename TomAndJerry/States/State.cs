@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Graphics;
 /// </summary>
 namespace TomAndJerry.States
 {
-    public abstract class State : BasicMethods
+    public abstract class State : IBasicMethods
     {
         [XmlIgnore]
         public Vector2 dimensions;

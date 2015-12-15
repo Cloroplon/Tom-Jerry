@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace TomAndJerry.Interfaces
 {
-    interface IObjects
+    interface IMovable
     {
-        Image Image { get; set; }
+        Vector2 Velocity { get; set; }
 
+        float MoveSpeed { get; set; }
     }
 }

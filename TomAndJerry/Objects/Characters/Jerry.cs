@@ -4,14 +4,57 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
+using TomAndJerry.Interfaces;
 
 namespace TomAndJerry.Objects.Characters
 {
-    class Jerry : GameObjects
+    public class Jerry : GameObjects, IMovable
     {
-        // the same as for Tom. We also might add an additional abstract class for characters which can hol their common properties when we decide what we want our characters to do. 
-        public Jerry(Vector2 position, Texture2D image) : base(position, image)
+        private Vector2 velocity;
+
+        private float moveSpeed;
+
+        public Jerry() : base()
         {
+            this.Velocity = Vector2.Zero;
+        }
+        
+        public override void Update(GameTime gameTime)
+        {
+            // Jerry will move only to right and left
+            base.Update(gameTime);
+            if (Game1.InputManager.KeyIsDown(Keys.Left))
+            {
+                this.Velocity = new Vector2(-MoveSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds, Velocity.Y);
+            }
+            else if (Game1.InputManager.KeyIsDown(Keys.Right))
+            {
+                this.Velocity = new Vector2(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds, Velocity.Y);
+            }
+
+            this.Image.Position += this.Velocity;
+        }
+
+        public Vector2 Velocity
+        {
+            get
+            {
+                return this.velocity;
+            }
+            set { this.velocity = value; } 
+        }
+
+        public float MoveSpeed
+        {
+            get
+            {
+                return this.moveSpeed;
+            }
+            set
+            {
+                this.moveSpeed = value;
+            }
         }
     }
 }

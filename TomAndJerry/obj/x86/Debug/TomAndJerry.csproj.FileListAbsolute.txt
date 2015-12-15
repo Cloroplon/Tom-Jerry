@@ -81,3 +81,5 @@ C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Arial.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Orbitron.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\StateManager\FadeImage.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\MenuBackground.jpg
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\TomAndJerryKitchen.jpg
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\pic.png

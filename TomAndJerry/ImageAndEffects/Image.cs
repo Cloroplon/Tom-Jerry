@@ -15,7 +15,7 @@ using TomAndJerry.States;
 /// </summary>
 namespace TomAndJerry
 {
-    public class Image : BasicMethods
+    public class Image : IBasicMethods
     {
         public float Alpha;
         public string Text, FontName;

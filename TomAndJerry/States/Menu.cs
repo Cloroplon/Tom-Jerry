@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace TomAndJerry.States
 {
-    public class Menu : BasicMethods
+    public class Menu : IBasicMethods
     {
         
         public event EventHandler OnMenuChange;
@@ -144,6 +144,12 @@ namespace TomAndJerry.States
                 }
                 Items[i].Image.Update(gameTime);
             }
+            
+            if (Items[0].Image.IsActive && Game1.InputManager.KeyPressed(Keys.Space) && !Game1.StateManager.IsTransioning )
+            {
+                Game1.StateManager.ChangeStates("GameState");
+            }
+            
         }
 
 
