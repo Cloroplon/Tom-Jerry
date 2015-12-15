@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Jerry>
   <Image>
-    <Path>pic</Path>
+    <Path>Jerry</Path>
+    <Effects>SpriteSheetEffect</Effects>
   </Image>
   <MoveSpeed>100</MoveSpeed>
 </Jerry>

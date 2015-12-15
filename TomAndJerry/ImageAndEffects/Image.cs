@@ -37,6 +37,7 @@ namespace TomAndJerry
         public string Effects;
 
         public FadeEffect FadeEffect; // this is an instance of fadeEffect which will be loaded from the XML. And with setEffect method which is below we are going to refer this instance and when we make changes to it it will be also change in the dictionary effectList of the Image. 
+        public SpriteSheetEffect SpriteSheetEffect;
 
         public Image()
         {
@@ -97,7 +98,7 @@ namespace TomAndJerry
             Game1.StateManager.GraphicsDevice.SetRenderTarget(null);
 
             SetEffect<FadeEffect>(ref FadeEffect);
-
+            SetEffect<SpriteSheetEffect>(ref SpriteSheetEffect);
 
             if (Effects != String.Empty)
             {

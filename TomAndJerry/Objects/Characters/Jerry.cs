@@ -19,7 +19,14 @@ namespace TomAndJerry.Objects.Characters
         {
             this.Velocity = Vector2.Zero;
         }
-        
+
+        public override void LoadContent()
+        {
+            base.LoadContent();
+            this.Image.SpriteSheetEffect.AmountOfFrames = 6; // for every object in the contstructor we must set how many frames does the spritesheet for the objects have.
+            this.Image.SpriteSheetEffect.CurrentFrame = 1; // and the frame from which we want our object to start. Jerry's default state is frame 1.
+        }
+
         public override void Update(GameTime gameTime)
         {
             // Jerry will move only to right and left
@@ -30,9 +37,12 @@ namespace TomAndJerry.Objects.Characters
             }
             else if (Game1.InputManager.KeyIsDown(Keys.Right))
             {
-                this.Velocity = new Vector2(MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds, Velocity.Y);
+                this.Velocity = new Vector2(MoveSpeed*(float) gameTime.ElapsedGameTime.TotalSeconds, Velocity.Y);
             }
-
+            else
+            {
+                this.Velocity = new Vector2(0,0);
+            }
             this.Image.Position += this.Velocity;
         }
 

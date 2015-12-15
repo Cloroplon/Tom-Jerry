@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Xml.Serialization;
 /// <summary>
-/// We will use it to load and save our states.
+/// We will use it to load and save our states and objects.
 /// </summary>
 namespace TomAndJerry
 {
