@@ -4,7 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/Simooo/Desktop/TomAndJerry/Content/StateManager/FadeImage.png</File>
-    <File>C:/Users/Simooo/Desktop/TomAndJerry/Content/Arial.spritefont</File>
+    <File>D:/SoftUni/1. Level Fundamentals/4. OOP/Team project/Game/TomAndJerry/Content/StateManager/FadeImage.png</File>
+    <File>D:/SoftUni/1. Level Fundamentals/4. OOP/Team project/Game/TomAndJerry/Content/Arial.spritefont</File>
   </SourceFiles>
 </SourceFileCollection>

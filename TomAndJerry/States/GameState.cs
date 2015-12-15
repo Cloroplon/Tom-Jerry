@@ -14,13 +14,13 @@ namespace TomAndJerry.States
     public class GameState : State
     {
         // here we will store all the objects we currently have and in the game we will just update all of the objects and the background picture.
-        public static List<GameObjects> gameObjects;
+        public static List<GameObject> gameObjects;
 
         public Jerry Player;
 
         public GameState()
         {
-            gameObjects = new List<GameObjects>();
+            gameObjects = new List<GameObject>();
             
         }
 

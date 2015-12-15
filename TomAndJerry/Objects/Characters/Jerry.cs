@@ -9,7 +9,7 @@ using TomAndJerry.Interfaces;
 
 namespace TomAndJerry.Objects.Characters
 {
-    public class Jerry : GameObjects, IMovable
+    public class Jerry : GameObject, IMovable
     {
         private Vector2 velocity;
 

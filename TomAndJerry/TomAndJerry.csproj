@@ -49,9 +49,10 @@
     <Compile Include="InputManager.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IObjects.cs" />
+    <Compile Include="Objects\Characters\Character.cs" />
     <Compile Include="Objects\Characters\Jerry.cs" />
     <Compile Include="Objects\Characters\Tom.cs" />
-    <Compile Include="Objects\GameObjects.cs" />
+    <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Interfaces\IBasicMethods.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
