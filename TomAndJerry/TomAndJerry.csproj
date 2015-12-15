@@ -54,6 +54,7 @@
     <Compile Include="Objects\Characters\Tom.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Interfaces\IBasicMethods.cs" />
+    <Compile Include="Objects\Items\Item.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="States\GameOverState.cs" />
