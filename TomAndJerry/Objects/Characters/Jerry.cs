@@ -23,7 +23,7 @@ namespace TomAndJerry.Objects.Characters
         public override void LoadContent()
         {
             base.LoadContent();
-            this.Image.SpriteSheetEffect.AmountOfFrames = 6; // for every object in the contstructor we must set how many frames does the spritesheet for the objects have.
+            this.Image.SpriteSheetEffect.AmountOfFrames = 9; // for every object in the contstructor we must set how many frames does the spritesheet for the objects have.
             this.Image.SpriteSheetEffect.CurrentFrame = 1; // and the frame from which we want our object to start. Jerry's default state is frame 1.
         }
 

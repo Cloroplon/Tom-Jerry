@@ -8,6 +8,7 @@ namespace TomAndJerry.ImageAndEffects
 {
    public  class SpriteSheetEffect : ImageEffect
    {
+        // we are setting the default current frame and amount of frames in the objects LoadContent
        public int FrameCounter;
        public int SwitchFrame;
        public byte CurrentFrame; // this shows on which picture we are from the spritesheed. It is nor Vector2 because we will actually have only one line of images.

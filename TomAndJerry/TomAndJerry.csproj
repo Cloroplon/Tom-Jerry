@@ -99,7 +99,9 @@
     </Content>
     <Content Include="Icon.ico" />
     <Content Include="Load\GameState.xml" />
-    <Content Include="Load\Player.xml" />
+    <Content Include="Load\Player.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Load\TitleState.xml">
       <SubType>Designer</SubType>
     </Content>
