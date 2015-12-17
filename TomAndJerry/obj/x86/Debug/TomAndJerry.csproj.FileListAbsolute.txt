@@ -118,3 +118,37 @@ D:\SoftUni\1. Level Fundamentals\4. OOP\Team project\Game\TomAndJerry\bin\Window
 D:\SoftUni\1. Level Fundamentals\4. OOP\Team project\Game\TomAndJerry\bin\Windows\Debug\SharpDX.RawInput.xml
 D:\SoftUni\1. Level Fundamentals\4. OOP\Team project\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D9.xml
 D:\SoftUni\1. Level Fundamentals\4. OOP\Team project\Game\TomAndJerry\obj\x86\Debug\TomAndJerry.csprojResolveAssemblyReference.cache
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\obj\x86\Debug\TomAndJerry.exe
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\obj\x86\Debug\TomAndJerry.pdb
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\Jerry.png
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\MenuBackground.jpg
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\pic.png
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\StateManager\FadeImage.png
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\TomAndJerryKitchen.jpg
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\Orbitron.xnb
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\Arial.xnb
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\StateManager\FadeImage.xnb
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\Content\Start.png
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\TomAndJerry.exe
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\TomAndJerry.pdb
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\MonoGame.Framework.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.MediaFoundation.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.XAudio2.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D11.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.DXGI.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct2D1.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.XInput.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.RawInput.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D9.dll
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\MonoGame.Framework.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.MediaFoundation.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.XAudio2.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D11.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.DXGI.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct2D1.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.XInput.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.RawInput.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D9.xml
+D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\obj\x86\Debug\TomAndJerry.csprojResolveAssemblyReference.cache

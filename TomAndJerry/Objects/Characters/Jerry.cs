@@ -25,9 +25,9 @@ namespace TomAndJerry.Objects.Characters
 
         // properties for drawing
              
-        public const int FrameWidth= 53;
+        public const int FrameWidth= 65;
         public const int FrameWidthMoving = 80;
-        public const int FrameWidthHit = 45;
+        public const int FrameWidthHit = 65;
 
         public Jerry() : base()
         {
