@@ -45,7 +45,6 @@
     <Compile Include="ImageAndEffects\FadeEffect.cs" />
     <Compile Include="ImageAndEffects\Image.cs" />
     <Compile Include="ImageAndEffects\ImageEffect.cs" />
-    <Compile Include="ImageAndEffects\SpriteSheetEffect.cs" />
     <Compile Include="InputManager.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IObjects.cs" />

@@ -2,11 +2,10 @@
 <Jerry>
   <Image>
     <Path>Jerry</Path>
-    <Effects>SpriteSheetEffect</Effects>
     <Position>
       <X>320</X>
       <Y>400</Y>
     </Position>
-  </Image>
-  <MoveSpeed>100</MoveSpeed>
+   </Image>
+  <MoveSpeed>200</MoveSpeed>
 </Jerry>

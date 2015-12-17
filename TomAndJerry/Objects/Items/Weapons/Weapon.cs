@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TomAndJerry.Objects.Items.Weapons
 {
-    class Weapon : Item
+    public abstract class Weapon : Item
     {
     }
 }
