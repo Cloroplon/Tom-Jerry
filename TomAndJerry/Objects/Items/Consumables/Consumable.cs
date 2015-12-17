@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TomAndJerry.Objects.Items.Consumables
 {
-    public abstract class Consumable : Item
+    class Consumable : Item
     {
     }
 }
