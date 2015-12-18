@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using TomAndJerry.Objects.Characters;
 using TomAndJerry.Objects.Items.Consumables;
 
+
 namespace TomAndJerry.States
 {
     public class GameState : State
@@ -103,6 +104,8 @@ namespace TomAndJerry.States
 
         private void CreatingObjects()
         {
+            if (random.Next(100)==55)
+            { 
             // we neee to think where to put Tom and the state of bombing. I guess with a boolean bombing and every 30 seconds or so to make it true and if it is not bombing to do this below if it is bombing we are going to run another code. 
             if (random.Next(10) > 8)
             {
@@ -113,12 +116,40 @@ namespace TomAndJerry.States
                 // fruit
                 switch (random.Next(6))
                 {
+                    
                     case 0:
-                        Consumable fruit = fruitFactory.CreateFruit("Strawberry");
-                        fruit.LoadContent();
-                        gameObjects.Add(fruit);
+                        Consumable fruitStrawberry = fruitFactory.CreateFruit("Strawberry");
+                        fruitStrawberry.LoadContent();
+                        gameObjects.Add(fruitStrawberry);
                         break;
+                    case 1:
+                        Consumable fruitCherry = fruitFactory.CreateFruit("Cherry");
+                        fruitCherry.LoadContent();
+                        gameObjects.Add(fruitCherry);
+                        break;
+                    case 2:
+                        Consumable fruitCheese = fruitFactory.CreateFruit("Cheese");
+                        fruitCheese.LoadContent();
+                        gameObjects.Add(fruitCheese);
+                        break;
+                    case 3:
+                        Consumable fruitCake = fruitFactory.CreateFruit("Cake");
+                        fruitCake.LoadContent();
+                        gameObjects.Add(fruitCake);
+                        break;
+                    case 4:
+                        Consumable fruitMuffin = fruitFactory.CreateFruit("Muffin");
+                        fruitMuffin.LoadContent();
+                        gameObjects.Add(fruitMuffin);
+                        break;
+                    case 5:
+                        Consumable fruitSalami = fruitFactory.CreateFruit("Salami");
+                        fruitSalami.LoadContent();
+                        gameObjects.Add(fruitSalami);
+                        break;
+                    default: break;
                 }
+            }
             }
         }
 

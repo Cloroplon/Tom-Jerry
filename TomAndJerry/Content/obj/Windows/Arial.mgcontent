@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/Simooo/Desktop/TomAndJerry/Content/Arial.spritefont</SourceFile>
-  <SourceTime>2015-12-18T07:53:24.9241008+02:00</SourceTime>
-  <DestFile>C:/Users/Simooo/Desktop/TomAndJerry/Content/bin/Windows/Arial.xnb</DestFile>
-  <DestTime>2015-12-18T09:28:42.1967148+02:00</DestTime>
+  <SourceFile>D:/SoftUni/OOP/GitHub/Game/TomAndJerry/Content/Arial.spritefont</SourceFile>
+  <SourceTime>2015-12-18T14:45:22.8183092+02:00</SourceTime>
+  <DestFile>D:/SoftUni/OOP/GitHub/Game/TomAndJerry/Content/bin/Windows/Arial.xnb</DestFile>
+  <DestTime>2015-12-18T14:48:53.7206639+02:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>
