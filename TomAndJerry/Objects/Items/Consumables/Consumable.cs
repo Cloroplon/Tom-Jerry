@@ -7,5 +7,6 @@ namespace TomAndJerry.Objects.Items.Consumables
 {
     public abstract class Consumable : Item
     {
+        
     }
 }

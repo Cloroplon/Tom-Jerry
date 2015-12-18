@@ -152,3 +152,4 @@ D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.XInput.xml
 D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.RawInput.xml
 D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\bin\Windows\Debug\SharpDX.Direct3D9.xml
 D:\SoftUni\OOP\GitHub\game\Game\TomAndJerry\obj\x86\Debug\TomAndJerry.csprojResolveAssemblyReference.cache
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\strawberry.png

@@ -70,9 +70,9 @@ namespace TomAndJerry.Objects.Characters
             {
                 this.Image.Position.X = 5;
             }
-            else if (this.Image.Position.X > 595)
+            else if (this.Image.Position.X > 590)
             {
-                this.Image.Position.X = 595;
+                this.Image.Position.X = 590;
             }
         }
 
