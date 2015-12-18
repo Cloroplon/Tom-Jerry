@@ -15,6 +15,8 @@ namespace TomAndJerry
     {
         public Image Image { get; set; }
         
+        public bool MustRemove { get; set; }
+
         public virtual void LoadContent()
         {
             Image.LoadContent();

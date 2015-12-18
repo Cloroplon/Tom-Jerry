@@ -22,13 +22,13 @@ namespace TomAndJerry.States
         {
             base.LoadContent();
             menuManager.LoadContent("../../../Load/Menu.xml");
-            this.Image.LoadContent();
+          
         }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
-            this.Image.UnloadContent();
+            
             menuManager.UnloadContent();
             
         }
@@ -36,7 +36,7 @@ namespace TomAndJerry.States
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            this.Image.Update(gameTime);
+            
             menuManager.Update(gameTime);
             
         }
@@ -44,7 +44,7 @@ namespace TomAndJerry.States
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            this.Image.Draw(spriteBatch);
+            
             menuManager.Draw(spriteBatch);
             
         }

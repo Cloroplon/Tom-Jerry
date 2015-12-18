@@ -41,7 +41,6 @@
     <StartupObject>TomAndJerry.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Attributes\FruitAttribute.cs" />
     <Compile Include="FruitFactory.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="ImageAndEffects\FadeEffect.cs" />

@@ -36,23 +36,27 @@ namespace TomAndJerry.States
         {
             // we are creating a new conent manager so it can load only the files we need for this specific content manager
             this.contentManager = new ContentManager(Game1.StateManager.Content.ServiceProvider, "Content");
+            this.Image.LoadContent();
         }
 
 
         public virtual void UnloadContent()
         {
             this.contentManager.Unload();
+            this.Image.UnloadContent();
         }
 
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
+            this.Image.Draw(spriteBatch);
         }
 
 
         public virtual void Update(GameTime gameTime)
         {
             Game1.InputManager.Update();
+            this.Image.Update(gameTime);
         }
 
         public Vector2 Dimensions

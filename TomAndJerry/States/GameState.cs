@@ -21,6 +21,8 @@ namespace TomAndJerry.States
         // for random objects
         private Random random;
         private FruitFactory fruitFactory;
+        public int points = 0;
+
         public GameState()
         {
             gameObjects = new List<GameObject>();
@@ -34,18 +36,18 @@ namespace TomAndJerry.States
             XMLManager<Jerry> xmlManager = new XMLManager<Jerry>();
             Player = xmlManager.Load("../../../Load/Player.xml");
             // this is the image inherited from State. 
-            Image.LoadContent();
+          
             Player.LoadContent();
             foreach (var gameObject in gameObjects)
             {
                 gameObject.LoadContent();
             }
-         }
+        }
 
         public override void UnloadContent()
         {
             base.UnloadContent();
-            Image.UnloadContent();
+            
             Player.UnloadContent();
             foreach (var gameObject in gameObjects)
             {
@@ -56,11 +58,10 @@ namespace TomAndJerry.States
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            Image.Update(gameTime);
+           
             Player.Update(gameTime);
             CreatingObjects();
             UpdatingObects(gameTime);
-
             RemovingObects();
         }
 
@@ -69,15 +70,30 @@ namespace TomAndJerry.States
             foreach (var gameObject in gameObjects)
             {
                 gameObject.Update(gameTime);
+                // this is used only for the fruits. It can serve us for bonuses as well. 
+                if (gameObject is Consumable)
+                {
+                    // checking if the image is in the sam position as the player's image.
+                    if (gameObject.Image.Position.Y.Equals(Player.Image.Position.Y) &&
+                    gameObject.Image.Position.X.Equals(Player.Image.Position.X))
+                    {
+                        // we don't have access to the points of the fruit if we do not cast it to consumable first
+                        var fruitConsumed = gameObject as Consumable;
+                        this.points += fruitConsumed.Points;
+                        fruitConsumed.MustRemove = true;
+                    }
+                }
+
             }
         }
 
         private void RemovingObects()
         {
+            // we are creating a new list because otherwise when an item from the list is removed while we are in foreach an exception is thrown.
             List<GameObject> objectsAfterRemoval = new List<GameObject>();
             foreach (var gameObject in gameObjects)
             {
-                if (!(gameObject.Image.Position.Y > 480))
+                if (!gameObject.MustRemove)
                 {
                     objectsAfterRemoval.Add(gameObject);
                 }
@@ -109,12 +125,12 @@ namespace TomAndJerry.States
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-            Image.Draw(spriteBatch);
-            Player.Draw(spriteBatch);
+                      
             foreach (var gameObject in gameObjects)
             {
                 gameObject.Draw(spriteBatch);
             }
+            Player.Draw(spriteBatch);
         }
 
     }

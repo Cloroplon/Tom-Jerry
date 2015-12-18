@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using TomAndJerry.Attributes;
 using TomAndJerry.Interfaces;
 
 namespace TomAndJerry.Objects.Items.Consumables
 {
-    [Fruit]
     class Strawberry : Consumable
     {
         public Strawberry()
         {
             this.MoveSpeed = 100;
+            this.Points = 10;
             this.Image = new Image();
         }
 
