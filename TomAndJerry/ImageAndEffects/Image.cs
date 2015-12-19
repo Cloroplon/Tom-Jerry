@@ -20,7 +20,7 @@ namespace TomAndJerry
         public float Alpha;
         public string Text, FontName;
         public string Path;
-        public Vector2 Position, Scale;
+        public Vector2 Position, Scale, PositionForText;
         public Rectangle SourceRectangle;
         public bool IsActive;
 
@@ -91,7 +91,7 @@ namespace TomAndJerry
             {
                 Game1.StateManager.SpriteBatch.Draw(Texture, Vector2.Zero, Color.White);
             }
-            Game1.StateManager.SpriteBatch.DrawString(this.Font, Text, Vector2.Zero, Color.Black);
+            Game1.StateManager.SpriteBatch.DrawString(this.Font, Text, PositionForText, Color.Black);
             Game1.StateManager.SpriteBatch.End();
 
             Texture = this.renderTarget;
@@ -137,6 +137,7 @@ namespace TomAndJerry
         {
             this.origin = new Vector2(SourceRectangle.Width / 2, SourceRectangle.Height / 2); // taking the center of the pic
             spriteBatch.Draw(Texture, Position + origin, SourceRectangle, Color.White * this.Alpha, 0.0f, origin, Scale, SpriteEffects.None, 0.0f); // the mutipying with alpha will give us the transparancy. To the position is added to the origin for accurate displaying
+            Game1.StateManager.SpriteBatch.DrawString(this.Font, Text, PositionForText, Color.Black);
         }
 
         // Methods for Image effect

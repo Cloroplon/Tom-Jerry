@@ -37,8 +37,9 @@ namespace TomAndJerry.States
             base.LoadContent();
             XMLManager<Jerry> xmlManager = new XMLManager<Jerry>();
             Player = xmlManager.Load("../../../Load/Player.xml");
-            // this is the image inherited from State. 
-          
+            // this is the image inherited from State and we are adding the text and the text position
+            this.Image.PositionForText = new Vector2(100, 100);
+            
             Player.LoadContent();
             foreach (var gameObject in gameObjects)
             {
@@ -60,11 +61,12 @@ namespace TomAndJerry.States
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-           
+            this.Image.Text = String.Format("Score: {0}", Points);
             Player.Update(gameTime);
             CreatingObjects();
             UpdatingObects(gameTime);
             RemovingObects();
+            
         }
 
         private void UpdatingObects(GameTime gameTime)

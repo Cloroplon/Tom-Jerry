@@ -72,9 +72,9 @@ namespace TomAndJerry.Objects.Characters
 
             this.Image.Update(gameTime);
             this.Image.Position += this.Velocity;
-            if (this.Image.Position.X < 5)
+            if (this.Image.Position.X < 0)
             {
-                this.Image.Position.X = 5;
+                this.Image.Position.X = 0;
             }
             else if (this.Image.Position.X > 590)
             {
@@ -114,6 +114,7 @@ namespace TomAndJerry.Objects.Characters
             this.basket.Draw(spriteBatch);
         }
 
+        // it is Jerry's responsibility to put the objects in the basket that is why this method is here and not in GameState.
         public void PutInBasket()
         {
             foreach (var gameObject in GameState.gameObjects)
@@ -123,7 +124,7 @@ namespace TomAndJerry.Objects.Characters
                 {
                     // checking if the image is in the sam position as the basket image.
                     if ((gameObject.Image.Position.Y > this.basket.Image.Position.Y - 2 && gameObject.Image.Position.Y < this.basket.Image.Position.Y + 2) && (
-                    gameObject.Image.Position.X > this.basket.Image.Position.X - 10 && gameObject.Image.Position.X < this.basket.Image.Position.X + 15))
+                    gameObject.Image.Position.X > this.basket.Image.Position.X - 10 && gameObject.Image.Position.X < this.basket.Image.Position.X + 25))
                     {
                         // we don't have access to the points of the fruit if we do not cast it to consumable first
                         var fruitConsumed = gameObject as Consumable;
