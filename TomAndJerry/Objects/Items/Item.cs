@@ -7,9 +7,7 @@ using TomAndJerry.Interfaces;
 
 namespace TomAndJerry.Objects.Items
 {
-    public abstract class Item : GameObject, IMovable
-    {
-        public Vector2 Velocity { get; set; }
-        public float MoveSpeed { get; set; }
+    public abstract class Item : GameObject
+    { 
     }
 }

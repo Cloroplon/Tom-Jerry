@@ -193,3 +193,10 @@ D:\SoftUni\OOP\GitHub\Game\TomAndJerry\bin\Windows\Debug\Content\cheese.png
 D:\SoftUni\OOP\GitHub\Game\TomAndJerry\bin\Windows\Debug\Content\cake.png
 D:\SoftUni\OOP\GitHub\Game\TomAndJerry\bin\Windows\Debug\Content\muffin.png
 D:\SoftUni\OOP\GitHub\Game\TomAndJerry\bin\Windows\Debug\Content\salami.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\cake.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\cheese.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\cherry.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\muffin.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\salami.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Basket.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\OnlyJerry.png

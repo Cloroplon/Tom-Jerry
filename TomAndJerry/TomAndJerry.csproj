@@ -55,6 +55,7 @@
     <Compile Include="Objects\Characters\Tom.cs" />
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Interfaces\IBasicMethods.cs" />
+    <Compile Include="Objects\Items\Basket.cs" />
     <Compile Include="Objects\Items\Consumables\Cake.cs" />
     <Compile Include="Objects\Items\Consumables\Cheese.cs" />
     <Compile Include="Objects\Items\Consumables\Cherry.cs" />
@@ -86,6 +87,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Basket.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Content\cake.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
@@ -102,6 +106,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\muffin.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\OnlyJerry.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\pic.png">

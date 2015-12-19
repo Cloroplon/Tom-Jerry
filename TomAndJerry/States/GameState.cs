@@ -17,12 +17,13 @@ namespace TomAndJerry.States
     {
         // here we will store all the objects we currently have and in the game we will just update all of the objects and the background picture.
         public static List<GameObject> gameObjects;
-
+        // our counter so we can slow the creation of fruits
+        private int creatorCounter = 0;
         public Jerry Player;
         // for random objects
         private Random random;
         private FruitFactory fruitFactory;
-        public int points = 0;
+        public static int Points = 0;
 
         public GameState()
         {
@@ -71,20 +72,6 @@ namespace TomAndJerry.States
             foreach (var gameObject in gameObjects)
             {
                 gameObject.Update(gameTime);
-                // this is used only for the fruits. It can serve us for bonuses as well. 
-                if (gameObject is Consumable)
-                {
-                    // checking if the image is in the sam position as the player's image.
-                    if (gameObject.Image.Position.Y.Equals(Player.Image.Position.Y) &&
-                    gameObject.Image.Position.X.Equals(Player.Image.Position.X))
-                    {
-                        // we don't have access to the points of the fruit if we do not cast it to consumable first
-                        var fruitConsumed = gameObject as Consumable;
-                        this.points += fruitConsumed.Points;
-                        fruitConsumed.MustRemove = true;
-                    }
-                }
-
             }
         }
 
@@ -104,9 +91,12 @@ namespace TomAndJerry.States
 
         private void CreatingObjects()
         {
-            if (random.Next(100)==55)
-            { 
-            // we neee to think where to put Tom and the state of bombing. I guess with a boolean bombing and every 30 seconds or so to make it true and if it is not bombing to do this below if it is bombing we are going to run another code. 
+            creatorCounter++;
+            // this is around 4 seconds.
+            if (creatorCounter == 120)
+            {
+                creatorCounter = 0;
+            // we need to think where to put Tom and the state of bombing. I guess with a boolean bombing and every 30 seconds or so to make it true and if it is not bombing to do this below if it is bombing we are going to run another code. 
             if (random.Next(10) > 8)
             {
                 // generate a bonus

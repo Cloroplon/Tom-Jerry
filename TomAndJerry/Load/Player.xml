@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Jerry>
   <Image>
-    <Path>Jerry</Path>
+    <Path>OnlyJerry</Path>
     <Position>
       <X>320</X>
       <Y>400</Y>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>D:/SoftUni/OOP/GitHub/Game/TomAndJerry/Content/StateManager/FadeImage.png</SourceFile>
-  <SourceTime>2015-12-18T14:45:22.8222942+02:00</SourceTime>
-  <DestFile>D:/SoftUni/OOP/GitHub/Game/TomAndJerry/Content/bin/Windows/StateManager/FadeImage.xnb</DestFile>
-  <DestTime>2015-12-18T14:48:52.4550456+02:00</DestTime>
+  <SourceFile>C:/Users/Simooo/Desktop/TomAndJerry/Content/StateManager/FadeImage.png</SourceFile>
+  <SourceTime>2015-12-18T07:53:24.9411121+02:00</SourceTime>
+  <DestFile>C:/Users/Simooo/Desktop/TomAndJerry/Content/bin/Windows/StateManager/FadeImage.xnb</DestFile>
+  <DestTime>2015-12-19T00:48:07.9247619+02:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2015-04-29T20:14:44+03:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
