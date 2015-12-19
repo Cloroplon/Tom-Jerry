@@ -17,13 +17,21 @@ namespace TomAndJerry.States
     {
         // here we will store all the objects we currently have and in the game we will just update all of the objects and the background picture.
         public static List<GameObject> gameObjects;
+        private FruitFactory fruitFactory;
         // our counter so we can slow the creation of fruits
-        private int creatorCounter = 0;
+        private int creatorCounter;
+
         public Jerry Player;
+
         // for random objects
         private Random random;
-        private FruitFactory fruitFactory;
-        public static int Points = 0;
+        
+        public static int points = 0;
+        public static double secondsLeft = 60;
+
+        // position of text at background.
+        Vector2 scorePosition = new Vector2(100, 100);
+        Vector2 timePosition = new Vector2(400, 100);
 
         public GameState()
         {
@@ -38,7 +46,6 @@ namespace TomAndJerry.States
             XMLManager<Jerry> xmlManager = new XMLManager<Jerry>();
             Player = xmlManager.Load("../../../Load/Player.xml");
             // this is the image inherited from State and we are adding the text and the text position
-            this.Image.PositionForText = new Vector2(100, 100);
             
             Player.LoadContent();
             foreach (var gameObject in gameObjects)
@@ -61,12 +68,21 @@ namespace TomAndJerry.States
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
-            this.Image.Text = String.Format("Score: {0}", Points);
+            secondsLeft -= gameTime.ElapsedGameTime.TotalSeconds;
             Player.Update(gameTime);
             CreatingObjects();
             UpdatingObects(gameTime);
             RemovingObects();
-            
+            CheckingTimeClock();
+
+        }
+
+        private void CheckingTimeClock()
+        {
+            if (secondsLeft <= 0 && !Game1.StateManager.IsTransioning)
+            {
+                Game1.StateManager.ChangeStates("GameOverState");
+            }
         }
 
         private void UpdatingObects(GameTime gameTime)
@@ -148,7 +164,8 @@ namespace TomAndJerry.States
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
-                      
+            spriteBatch.DrawString(this.Image.Font,$"Score: {points}", scorePosition, Color.White);
+            spriteBatch.DrawString(this.Image.Font, $"Time left: {secondsLeft:f2}", timePosition, Color.White);          
             foreach (var gameObject in gameObjects)
             {
                 gameObject.Draw(spriteBatch);

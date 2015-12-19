@@ -21,7 +21,7 @@ namespace TomAndJerry.Objects.Items.Consumables
             if (this.Image.Position.Y > 480)
             {
                 this.MustRemove = true;
-                GameState.Points -= this.Points;
+                GameState.points -= this.Points;
             }
         }
     }

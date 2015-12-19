@@ -123,12 +123,12 @@ namespace TomAndJerry.Objects.Characters
                 if (gameObject is Consumable)
                 {
                     // checking if the image is in the sam position as the basket image.
-                    if ((gameObject.Image.Position.Y > this.basket.Image.Position.Y - 2 && gameObject.Image.Position.Y < this.basket.Image.Position.Y + 2) && (
-                    gameObject.Image.Position.X > this.basket.Image.Position.X - 10 && gameObject.Image.Position.X < this.basket.Image.Position.X + 25))
+                    if ((gameObject.Image.Position.Y > this.basket.Image.Position.Y - 10 && gameObject.Image.Position.Y < this.basket.Image.Position.Y + 7) && (
+                    gameObject.Image.Position.X > this.basket.Image.Position.X - 15 && gameObject.Image.Position.X < this.basket.Image.Position.X + 25))
                     {
                         // we don't have access to the points of the fruit if we do not cast it to consumable first
                         var fruitConsumed = gameObject as Consumable;
-                        GameState.Points += fruitConsumed.Points;
+                        GameState.points += fruitConsumed.Points;
                         fruitConsumed.MustRemove = true;
 
                         this.basket.ContainsFruit = true;
