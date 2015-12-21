@@ -33,7 +33,7 @@ namespace TomAndJerry.States
         private Random random;
 
         public static int points = 0;
-        public static double secondsLeft = 35;
+        public static double secondsLeft = 60;
 
         // position of text at background.
         Vector2 scorePosition = new Vector2(100, 100);
