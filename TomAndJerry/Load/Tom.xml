@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Tom>
+  <Image>
+    <Path>TomHead</Path>
+    <Effects>FadeEffect</Effects>
+    <Position>
+      <X>0</X>
+      <Y>100</Y>
+    </Position>
+  </Image>
+</Tom>

@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using TomAndJerry.Objects.Items.Weapons;
 
 namespace TomAndJerry.Interfaces
 {
-    public interface IObjects
+    public interface IWeaponFactory
     {
-        Image Image { get; set; }
-
+        Weapon CreateWeapon(string name);
     }
 }

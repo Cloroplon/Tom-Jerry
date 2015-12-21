@@ -201,3 +201,6 @@ C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\salami.png
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Basket.png
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\OnlyJerry.png
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Broadway.xnb
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\TomHead.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\bombs.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Explosion.png

@@ -10,6 +10,7 @@ namespace TomAndJerry.Objects.Items.Consumables
 {
     public abstract class Consumable : Item, IMovable
     {
+        
         public Vector2 Velocity { get; set; }
         public float MoveSpeed { get; set; }   
         public int Points { get; protected set; }

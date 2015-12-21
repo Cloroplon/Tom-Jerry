@@ -14,7 +14,7 @@ namespace TomAndJerry
     public abstract class GameObject : IObjects, IBasicMethods
     {
         public Image Image { get; set; }
-        
+
         public bool MustRemove { get; set; }
 
         public virtual void LoadContent()
