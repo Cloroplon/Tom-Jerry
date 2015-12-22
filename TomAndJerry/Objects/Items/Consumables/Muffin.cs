@@ -26,12 +26,5 @@ namespace TomAndJerry.Objects.Items.Consumables
 
         }
 
-        public override void Update(GameTime gameTime)
-        {
-            base.Update(gameTime);
-            this.Velocity = new Vector2(Velocity.X, MoveSpeed * (float)gameTime.ElapsedGameTime.TotalSeconds);
-            this.Image.Update(gameTime);
-            this.Image.Position += this.Velocity;
-        }
     }
 }

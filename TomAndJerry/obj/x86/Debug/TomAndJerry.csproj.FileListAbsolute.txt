@@ -204,3 +204,4 @@ C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Broadway.xnb
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\TomHead.png
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\bombs.png
 C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\Explosion.png
+C:\Users\Simooo\Desktop\TomAndJerry\bin\Windows\Debug\Content\clock.png

@@ -8,8 +8,11 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using TomAndJerry.Factories;
+using TomAndJerry.Interfaces;
 using TomAndJerry.Objects.Characters;
+using TomAndJerry.Objects.Items.Bonuses;
 using TomAndJerry.Objects.Items.Consumables;
+using TomAndJerry.Objects.Items.Weapons;
 
 
 namespace TomAndJerry.States
@@ -19,9 +22,11 @@ namespace TomAndJerry.States
         // here we will store all the objects we currently have and in the game we will just update all of the objects and the background picture.
         public static List<GameObject> gameObjects;
         private FruitFactory fruitFactory;
-        
+        private BonusFactory bonusFactory;
         // our counter so we can slow the creation of fruits
-        private int creatorCounter;
+        private int creatorCounterPoints;
+        private int creatorCounterMax = 120; 
+
 
         public Jerry Player;
         public Tom Tom;
@@ -44,6 +49,7 @@ namespace TomAndJerry.States
             gameObjects = new List<GameObject>();
             random = new Random();
             fruitFactory = new FruitFactory();
+            bonusFactory = new BonusFactory();
         }
 
         public override void LoadContent()
@@ -75,7 +81,7 @@ namespace TomAndJerry.States
             }
             Tom.UnloadContent();
         }
-
+        #region Update()
         public override void Update(GameTime gameTime)
         {
             base.Update(gameTime);
@@ -83,9 +89,11 @@ namespace TomAndJerry.States
             if (secondsLeft <= 30)
             {
                 tomMode = true;
+                creatorCounterMax = 150; // we are slowing the creation of fruit because the main part in this mode is the bombs.
                 if (secondsLeft < 15)
                 {
                     tomMode = false;
+                    creatorCounterMax = 120; // we re reversing to initial value
                 }
             }
 
@@ -94,11 +102,9 @@ namespace TomAndJerry.States
             if (tomMode)
             {
                 Tom.Update(gameTime);
+
             }
-            else
-            {
-                CreatingFruits();
-            }
+            CreatingFruits();
             UpdatingObects(gameTime);
             RemovingObects();
             CheckingTimeClock();
@@ -109,6 +115,7 @@ namespace TomAndJerry.States
         {
             if (secondsLeft <= 0 && !Game1.StateManager.IsTransioning)
             {
+                secondsLeft = 0;
                 Game1.StateManager.ChangeStates("GameOverState");
             }
         }
@@ -118,7 +125,49 @@ namespace TomAndJerry.States
             foreach (var gameObject in gameObjects)
             {
                 gameObject.Update(gameTime);
+                if (gameObject is Bomb)
+                {
+                    Bomb bomb = gameObject as Bomb;
+                    if (bomb.Exploded && PlayerIsHit(bomb))
+                    {
+                        Player.IsHit = true;
+                        Player.IsMoving = false;
+                        Player.IsIdle = false;
+                        points -= 10;
+                    }
+                }
+                else
+                {
+                    // checking if the image is in the sam position as the basket image.
+                    if ((gameObject.Image.Position.Y > this.Player.Basket.Image.Position.Y - 10 &&
+                         gameObject.Image.Position.Y < this.Player.Basket.Image.Position.Y + 7) && (
+                             gameObject.Image.Position.X > this.Player.Basket.Image.Position.X - 15 &&
+                             gameObject.Image.Position.X < this.Player.Basket.Image.Position.X + 25))
+                    {
+                        Player.PutInBasket(gameObject);
+                    }
+                }
             }
+        }
+
+        private bool PlayerIsHit(Bomb bomb)
+        {
+            // we must take the two ends of X position of player and bomb so we can compare and make a suggestion that player is hit by the bomb.
+            float bombLefEnd = bomb.ExplodeImage.Position.X;
+            float bombRightEnd = bombLefEnd + 50; // 50 is width of the drawing.
+            float playerLeftEnd = Player.Image.Position.X;
+            float playerRightEnd;
+            // we have different image width for his states
+            if (Player.IsMoving)
+            {
+                playerRightEnd = playerLeftEnd + 80;
+            }
+            else
+            {
+                playerRightEnd = playerLeftEnd + 65;
+            }
+            return (bombLefEnd < playerRightEnd && bombLefEnd > playerLeftEnd) ||
+                               (bombRightEnd > playerLeftEnd && bombRightEnd < playerRightEnd);
         }
 
         private void RemovingObects()
@@ -137,16 +186,17 @@ namespace TomAndJerry.States
 
         private void CreatingFruits()
         {
-            creatorCounter++;
+            creatorCounterPoints++;
             // this is around 4 seconds.
-            if (creatorCounter == 120)
+            if (creatorCounterPoints == creatorCounterMax)
             {
-                creatorCounter = 0;
+                creatorCounterPoints = 0;
                 // we need to think where to put Tom and the state of bombing. I guess with a boolean bombing and every 30 seconds or so to make it true and if it is not bombing to do this below if it is bombing we are going to run another code. 
                 if (random.Next(10) > 8)
                 {
-
-                    // generate a bonus
+                    Bonus timeBonus = bonusFactory.CreateBonus("TimeBonus");
+                    timeBonus.LoadContent();
+                    gameObjects.Add(timeBonus);
                 }
                 else
                 {
@@ -189,7 +239,7 @@ namespace TomAndJerry.States
                 }
             }
         }
-
+#endregion
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
