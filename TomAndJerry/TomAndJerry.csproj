@@ -41,6 +41,7 @@
     <StartupObject>TomAndJerry.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Factories\BonusFactory.cs" />
     <Compile Include="Factories\FruitFactory.cs" />
     <Compile Include="Factories\WeaponFactory.cs" />
     <Compile Include="Game1.cs" />
@@ -48,6 +49,8 @@
     <Compile Include="ImageAndEffects\Image.cs" />
     <Compile Include="ImageAndEffects\ImageEffect.cs" />
     <Compile Include="InputManager.cs" />
+    <Compile Include="Interfaces\IBonus.cs" />
+    <Compile Include="Interfaces\IBonusFactory.cs" />
     <Compile Include="Interfaces\IFruitFactory.cs" />
     <Compile Include="Interfaces\IMovable.cs" />
     <Compile Include="Interfaces\IObjects.cs" />
@@ -58,6 +61,8 @@
     <Compile Include="Objects\GameObject.cs" />
     <Compile Include="Interfaces\IBasicMethods.cs" />
     <Compile Include="Objects\Items\Basket.cs" />
+    <Compile Include="Objects\Items\Bonuses\Bonus.cs" />
+    <Compile Include="Objects\Items\Bonuses\TimeBonus.cs" />
     <Compile Include="Objects\Items\Consumables\Cake.cs" />
     <Compile Include="Objects\Items\Consumables\Cheese.cs" />
     <Compile Include="Objects\Items\Consumables\Cherry.cs" />
@@ -103,6 +108,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\cherry.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\clock.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Content\Explosion.png">
